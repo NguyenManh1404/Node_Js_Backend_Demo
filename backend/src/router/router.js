@@ -1,9 +1,9 @@
 const express = require('express'); //import
 const router = express.Router(); //import
+const PostController = require('../app/controllers/PostController')
 
-router.get('/api/home', (req, res) => {
-  res.status(200).send({ message: "Hello word" });
-});
+const cloudinary = require('../../config/cloudinary');
 
+router.post('/api/upload', PostController.store);
 
 module.exports = router;

@@ -215,3 +215,9 @@ let schema = new mongoose.Schema(
 );
 module.exports = mongoose.model("post", schema);
 ```
+
+## Setup cloudinary
+
+1. **yarn add cloudinary**: Create đặt thư viện
+2. Thêm những key vào .env
+3. 

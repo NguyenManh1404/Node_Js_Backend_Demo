@@ -1,8 +1,12 @@
 const Post = require('../../models/Post');
+const { validationResult } = require('express-validator');
 
 const PostController = {
   // [POST] /api/post
   async store(req, res) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
     try {
       const {
         imagePost,
@@ -13,6 +17,7 @@ const PostController = {
         statusPost
       } = req.body;
       const newPost = await new Post({
+        idUser: "62c39ca5adbd3436894b82e2",
         imagePost: imagePost,
         contentPost: contentPost,
         likePost: likePost,

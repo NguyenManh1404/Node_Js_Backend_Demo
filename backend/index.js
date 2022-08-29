@@ -18,6 +18,6 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use('/', require('./src/router/router')) // import load router
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port http://localhost:${port}`)
 })
 
